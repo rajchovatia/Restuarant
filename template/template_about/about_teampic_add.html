@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            border: 2px solid black;
+            height: auto;
+            padding: 20px;
+            width: 50%;
+            margin: auto;
+        }
+        .btn{
+            background-color: green;
+            color: white;
+            width: 100px;
+            height: 30px;
+            border: hidden;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        .text{
+            width: 300px;
+            height: 30px;
+        }
+        .h2{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="h2"> Add Team Member :</h2>
+    <div class="form">
+    <form action="{% url 'aboutadd' %}" method = "post" >
+        {% csrf_token %}
+        <label for="myfile">Picture:</label>
+        <input type="file" id="picture" name="myfile" value="pic"><br><br>
+       <label for="name">Name :</label>
+       <input class="text" type="text" name="name" id="name" value="Your Name"><br><br>
+       <label for="info">Img_bio :</label>
+       <input class="text" type="text" name="userinfo" id="userinfo" value="Img_bio"><br><br>
+       <label for="time">slice_time :</label>
+       <input class="text" type="text" name="time" id="time" value="slice_Time"><br><br>
+       <button type="submit" class="btn" value="submit">Submit</button>
+      </form>
+    </div>
+</body>
+</html>

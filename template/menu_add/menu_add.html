@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .lanch{
+            border: 2px solid black;
+            width: 40%;
+            height: auto;
+            padding: 20px;
+            margin: auto;
+        }
+        .op{
+            width: 250px;
+            height: 33px;
+        }
+        .h2{
+                text-align:center;
+            }
+    </style>
+    
+</head>
+<body>
+    <h2 class="h2"> Add Menu's </h2>
+    <div class="lanch">
+        <form action="{% url 'menuadd' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="FoodList">Food Menu:</label>
+            <select  class="op" name="foodlist" id="foodlist">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select><br><br>
+            <label for="myfile">Picture:</label>
+            <input type="file" id="picture" name="picture" value=""><br><br>
+
+            <label for="breakfast_name">breakfast_name:</label>
+            <input class="text" type="text" name="name" id="name" value=""><br><br>
+
+            <label for="breakfast_info">breakfast_info:</label>
+            <input class="text" type="text" name="infomation" id="infomation" value=""><br><br>
+           
+            <label for="breakfast_price">breakfast_price:</label>
+            <input class="text" type="text" name="price" id="price" value=""><br><br>
+
+            <button type="submit" class="btn" value="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
